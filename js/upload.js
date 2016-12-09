@@ -19,9 +19,10 @@ var upload = function(evt) {
 
     var data = new FormData();
     data.append('fileToUpload', input.files[0]);
-
+    
     fetch('url/to/server', {
         method: 'POST',
+        credentials: 'same-origin',
         body: data
     }).then(function(response) {
         return response.json();
